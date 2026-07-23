@@ -1,20 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
+import Header from "./component/Header";
+import Footer from "./component/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const montserrat = Montserrat({
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
+<<<<<<< HEAD
   title: "Leivas outdoor",
   description: "Leivas outdoor Alicante",
+=======
+  title: "Leivas outdoor living",
+  description: "Espacios exteriores que se viven como un refugio",
+>>>>>>> master
 };
 
 export default function RootLayout({
@@ -24,10 +25,21 @@ export default function RootLayout({
 }>) {
   return (
     <html
+<<<<<<< HEAD
       lang="en"
       className="h-full antialiased"
+=======
+      lang="es"
+      className={`${montserrat.className} h-full antialiased`}
+>>>>>>> master
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full">
+        <Header />
+        <main>
+          {children}
+        </main>
+        <Footer />
+      </body>
     </html>
   );
 }
